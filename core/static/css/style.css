@@ -1,0 +1,102 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #422791;
+   
+    
+}
+
+.container {
+    text-align: center;
+
+}
+
+
+
+.image-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background: rgb(50, 6, 108);
+    border: 1px solid rgb(32, 1, 46);
+    width: 100%;
+    box-shadow: 0px 0px 15px rgb(218, 159, 231);
+    animation-name: myanimation;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+    
+}
+
+@keyframes myanimation{
+    0%{box-shadow: 0px 0px 15px rgb(218, 159, 231);}
+    25%{box-shadow: 0px 0px 20px rgb(149, 22, 177); background: rgb(206, 199, 218);}
+    50%{box-shadow: 0px 0px 15px rgb(31, 59, 168); background: rgb(24, 36, 46);}
+    75%{box-shadow: 0px 0px 20px rgb(159, 231, 197); background: rgb(195, 11, 183);}
+    100%{box-shadow: 0px 0px 15px rgb(231, 159, 208);}
+}
+
+.image-container img {
+    max-width: 45%;
+    height:200px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    transition-property: transform;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: #422791;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgb(218, 159, 231);
+    
+}
+
+
+.or{
+    color: whitesmoke;
+    font-size: 20px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.result {
+   
+    justify-items: center;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: whitesmoke;font-family: sans-serif;
+    
+}
+
+.heading h3{
+    color: whitesmoke;
+    font-size: 25px;
+}
+
+.heading p{
+    color: aliceblue;
+    font-size: 18px;
+  
+}
+
+a{
+    color: rgb(218, 159, 231);
+}

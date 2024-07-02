@@ -1,0 +1,32 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaceMatch</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="heading">
+            <h3>Welcome to FaceMatch</h3>
+            <p>Who is more beautiful, Left or Right?</p>
+        </div>
+        <div class="image-container">
+            <img id="left-image" src="" alt="Left Image">
+            <img id="right-image" src="" alt="Right Image">
+        </div>
+        <div class="button-container">
+            <button id="left-button" onclick="vote('left')">Left</button>
+            <div class="or">OR</div>
+            <button id="right-button" onclick="vote('right')">Right</button>
+        </div>
+        <div class="result">
+            <p>View the top 10 most beautiful girls of kdcc uppersixth science <a href="{% url 'top_images' %}">Rank</a></p>
+        </div>
+    </div>
+
+    <script src="{% static 'js/app.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 10 Images | FaceMatch</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        /* Additional styles specific to this page */
+        body {
+            background-color: #422791;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .image-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .image-list li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: rgb(50, 6, 108);
+            border: 1px solid rgb(32, 1, 46);
+            border-radius: 5px;
+            box-shadow: 0px 0px 15px rgb(218, 159, 231);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .image-list li img {
+            max-width: 100px;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .image-list li .image-info {
+            margin-left: 20px;
+            text-align: left;
+        }
+
+        .image-list li .image-info h3 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .image-list li .image-info p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+
+        .rank {
+            font-size: 20px;
+            font-weight: bold;
+            color: rgb(218, 159, 231);
+            margin-right: 10px;
+        }
+
+        .vote-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            outline: none;
+            border: none;
+            background-color: #422791;
+            color: white;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px rgb(218, 159, 231);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Top 10 Images | FaceMatch</h2>
+        <ul class="image-list">
+            {% for image in top_images %}
+            <li>
+                <span class="rank">{{ forloop.counter }}</span>
+                <img src="{{ image.path }}" alt="{{ image.name }}">
+                <div class="image-info">
+                    <h3>{{ image.name }}</h3>
+                    <p>Votes: {{ image.votes }}</p>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'voting' %}">
+            <button class="vote-button">Vote Now</button>
+        </a>
+    </div>
+</body>
+</html>
